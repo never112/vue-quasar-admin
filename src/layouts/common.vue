@@ -20,6 +20,19 @@
                         </q-tooltip>
                     </q-btn>
                 </router-link>
+                <q-item-side :avatar="userInfo.avatar" color="primary">
+                    <q-popover anchor="top right" self="top left">
+                        <q-list link style="min-width: 100px">
+                            <q-list-header>{{userInfo.name}}</q-list-header>
+                            <q-item>
+                                <q-item-main :label="$t('User info')" @click.native="userinfo" />
+                            </q-item>
+                            <q-item>
+                                <q-item-main :label="$t('Logout')" @click.native="logOut" />
+                            </q-item>
+                        </q-list>
+                    </q-popover>
+                </q-item-side>
                 <q-btn flat round icon="settings_backup_restore" @click="resetDb">
                     <q-tooltip anchor="bottom middle" self="top middle" :offset="[10, 10]">
                         {{$t('Initialization Data')}}
@@ -50,8 +63,8 @@
         <q-layout-drawer side="left" v-model="left" :overlay="leftOverlay" :behavior="leftBehavior" :breakpoint="leftBreakpoint"
                          :content-style="{width:shrinkMenu?'60px':'250px'}" content-class="bg-grey-3">
 
-            <!-- <q-list-header>Menu</q-list-header> -->
-            <q-item v-show="!shrinkMenu" style="padding:10px">
+             <!--userinf-->
+            <!-- <q-item v-show="!shrinkMenu" style="padding:10px">
                 <q-item-side :avatar="userInfo.avatar" color="primary" />
                 <q-item-main>
                     <q-item-tile label>{{ userInfo.name }}</q-item-tile>
@@ -75,7 +88,9 @@
                         </q-list>
                     </q-popover>
                 </q-item-side>
-            </q-item>
+            </q-item> -->
+
+            
             <fty-menu :menu-list="menuList" :shrink="shrinkMenu"></fty-menu>
 
         </q-layout-drawer>
