@@ -8,11 +8,12 @@
 
                 <q-toolbar-title>
 
-                    <!-- <span slot="subtitle">Header Subtitle</span> -->
+                    <span slot="subtitle">Header Subtitle</span>
                 </q-toolbar-title>
                 <a href="https://github.com/wjkang/vue-quasar-admin" class="text-white" target="_blank">
                     <q-btn flat round icon="fab fa-github"> </q-btn>
                 </a>
+                <div>欢迎使用CodeChecker</div>
                 <router-link :to="{ name: 'requestlog'}" tag="label">
                     <q-btn flat round icon="explore">
                         <q-tooltip anchor="bottom middle" self="top middle" :offset="[10, 10]">
@@ -250,7 +251,7 @@ export default {
     FtyMenu,
     FtyBreadcrumbs,
     FtyModuleTabs,
-    TagsView
+    //TagsView
   },
   data() {
     return {
